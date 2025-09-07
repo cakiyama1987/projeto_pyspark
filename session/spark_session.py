@@ -19,7 +19,6 @@ class SparkSessionManager:
             .config("spark.local.dir", os.environ.get("SPARK_LOCAL_DIRS", "C:/spark_tmp"))
         )
 
-        # Se HADOOP_HOME estiver setado e inválido, remova do processo
         if os.environ.get("HADOOP_HOME") and not os.path.exists(os.environ["HADOOP_HOME"]):
             os.environ.pop("HADOOP_HOME", None)
 
